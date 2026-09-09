@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Denise — 100 Reasons & 14 Songs</title>
+<meta name="description" content="A continuous-scroll love letter for Denise: 100 reasons and 14 dedicated songs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink-0:#fff5f7; --pink-1:#fde6eb; --pink-2:#f7c9d3; --rose:#a83d55; --wine:#712238;
+  --ink:#4d2630; --white:#fffafb; --line:rgba(168,61,85,.22); --shadow:0 18px 50px rgba(113,34,56,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 50% 0%,#fffafd 0,#fff2f5 45%,#fce4ea 100%);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.38;background-image:radial-gradient(circle at 20% 20%,rgba(255,255,255,.9) 0 1px,transparent 1.5px),radial-gradient(circle at 70% 40%,rgba(168,61,85,.10) 0 1px,transparent 1.5px);background-size:180px 180px,240px 240px;z-index:0}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;color:var(--wine)}
+a{color:inherit}
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;position:relative;isolation:isolate;padding:40px 22px}
+.hero-inner{position:relative;z-index:3;max-width:900px}
+.kicker{letter-spacing:.25em;text-transform:uppercase;font-size:.78rem;color:var(--rose);font-weight:700}
+.hero h1{font-size:clamp(3.4rem,10vw,8rem);line-height:.92;margin:18px 0 16px}
+.hero p{max-width:650px;margin:0 auto;color:#74424f;font-size:clamp(1rem,2vw,1.22rem);line-height:1.75}
+.scroll-cue{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rose)}
+.chevron{width:18px;height:18px;border-right:2px solid var(--rose);border-bottom:2px solid var(--rose);transform:rotate(45deg);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:translateY(0) rotate(45deg);opacity:.55}50%{transform:translateY(8px) rotate(45deg);opacity:1}}
+.tulip-field{position:absolute;inset:0;overflow:hidden;z-index:1;pointer-events:none}
+.tulip{position:absolute;bottom:-30px;width:42px;height:70px;opacity:.42;filter:blur(.1px);animation:floatUp linear infinite}
+.tulip::before{content:"";position:absolute;left:12px;top:0;width:28px;height:34px;background:linear-gradient(135deg,#d66b83,#a83d55);border-radius:70% 35% 65% 35% / 70% 45% 65% 30%;transform:rotate(-8deg)}
+.tulip::after{content:"";position:absolute;left:25px;top:29px;width:3px;height:48px;background:#6a8f68;box-shadow:-12px 22px 0 -1px #6a8f68;transform:rotate(3deg)}
+.tulip:nth-child(2n)::before{background:linear-gradient(135deg,#ef9fb0,#be4f69);transform:rotate(12deg)}
+.tulip:nth-child(3n){width:31px;transform:scale(.8)}
+@keyframes floatUp{from{transform:translate3d(0,0,0) rotate(-7deg)}50%{transform:translate3d(40px,-48vh,0) rotate(7deg)}to{transform:translate3d(-20px,-110vh,0) rotate(-6deg)}}
+main{position:relative;z-index:2}
+.section{width:min(1100px,calc(100% - 32px));margin:0 auto;padding:110px 0}
+.section-head{text-align:center;max-width:760px;margin:0 auto 55px}
+.section-head .eyebrow{color:var(--rose);font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:.76rem}
+.section-head h2{font-size:clamp(2.3rem,5vw,4rem);margin:10px 0}
+.section-head p{line-height:1.8;color:#70404d}
+.reasons{position:relative;padding:10px 0}
+.reasons::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(var(--line),rgba(168,61,85,.04));transform:translateX(-50%)}
+.reason-card{width:calc(50% - 38px);position:relative;margin:0 0 34px;padding:25px 27px;background:rgba(255,250,251,.82);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);backdrop-filter:blur(8px);transition:transform .35s ease,box-shadow .35s ease}
+.reason-card:hover{transform:translateY(-3px);box-shadow:0 24px 60px rgba(113,34,56,.16)}
+.reason-card:nth-child(odd){margin-right:auto}
+.reason-card:nth-child(even){margin-left:auto}
+.reason-number{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--pink-1);border:1px solid var(--line);font-size:.72rem;font-weight:800;color:var(--rose);margin-bottom:13px}
+.reason-card p{margin:0;line-height:1.8;font-size:1rem}
+.heart{position:absolute;right:20px;top:18px;color:rgba(168,61,85,.45);font-size:1.05rem;cursor:pointer;border:0;background:none;padding:8px;line-height:1;transition:color .2s ease,transform .2s ease;user-select:none}
+.heart:hover{color:var(--rose);transform:scale(1.12)}
+.heart.favorited{color:#ff4f7b;transform:scale(1.08)}
+.heart.pop{animation:heartPop .34s ease}
+@keyframes heartPop{0%{transform:scale(1)}45%{transform:scale(1.42)}75%{transform:scale(.92)}100%{transform:scale(1.08)}}
+.ambient-player{position:fixed;right:18px;bottom:18px;z-index:20;display:flex;align-items:center;gap:10px;padding:8px 12px 8px 9px;border:1px solid var(--line);border-radius:999px;background:rgba(255,250,251,.9);box-shadow:0 12px 35px rgba(113,34,56,.18);backdrop-filter:blur(12px)}
+.ambient-toggle{width:42px;height:42px;border:0;border-radius:50%;background:var(--pink-1);color:var(--rose);font-size:1rem;cursor:pointer}
+.ambient-label{font-size:.78rem;color:#74424f;max-width:130px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.song-choice{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:20px;background:rgba(77,38,48,.25);backdrop-filter:blur(8px)}
+.song-choice[hidden]{display:none}
+.song-choice-card{width:min(460px,100%);padding:30px;border:1px solid var(--line);border-radius:28px;background:var(--white);box-shadow:0 30px 90px rgba(113,34,56,.25);text-align:center}
+.song-choice-card h2{margin:0 0 8px;font-size:2rem}
+.song-choice-card p{margin:0 0 22px;color:#74424f;line-height:1.6}
+.song-choice-actions{display:grid;gap:10px}
+.song-choice-actions button{padding:14px 18px;border:1px solid var(--line);border-radius:16px;background:var(--pink-0);color:var(--wine);font:600 1rem "DM Sans",sans-serif;cursor:pointer}
+.song-choice-actions button:hover{background:var(--pink-1)}
+@media (max-width:760px){.ambient-player{right:12px;bottom:12px}.ambient-label{max-width:105px}}
+.songs-wrap{display:grid;gap:24px}
+.song-card{background:rgba(255,250,251,.9);border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:var(--shadow)}
+.song-meta{display:flex;align-items:center;gap:15px;margin-bottom:16px}
+.track-no{font-family:"Playfair Display",serif;font-size:1.7rem;color:var(--rose);min-width:42px}
+.song-meta h3{margin:0;font-size:1.45rem}
+.song-meta p{margin:3px 0 0;color:#80515d}
+.song-card iframe{width:100%;height:152px;border:0;border-radius:14px;background:#f6d8df}
+.song-lyrics{margin:16px 0 12px;padding:12px 18px;background:rgba(168,61,85,.05);border-left:3px solid var(--rose);border-radius:0 12px 12px 0;font-style:italic;font-size:.92rem;line-height:1.65;color:var(--ink)}
+.song-note{margin:12px 4px 0;line-height:1.75;color:#68404c}
+.player-fallback{min-height:152px;border-radius:14px;background:linear-gradient(135deg,#fae4e9,#f8d4dd);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;text-align:center;padding:18px;color:#72404f}
+.fallback-icon{width:48px;height:48px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:1.5rem;color:var(--rose)}
+.player-fallback span{font-size:.88rem;max-width:500px}
+.player-fallback a{margin-top:4px;font-weight:700;color:var(--rose);text-decoration:none}
+.final{padding-top:65px;padding-bottom:120px;text-align:center}
+.final .seal{width:76px;height:76px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;background:var(--pink-1);border:1px solid var(--line);color:var(--rose);font-size:1.5rem}
+.final h2{font-size:clamp(2.3rem,6vw,4rem);margin:0 0 14px}
+.final p{max-width:720px;margin:0 auto;line-height:1.9;color:#74424f}
+footer{padding:30px 20px 48px;text-align:center;color:#9a6571;font-size:.8rem}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media (max-width:760px){
+  .section{padding:82px 0}
+  .reasons::before{left:18px}
+  .reason-card{width:calc(100% - 36px);margin-left:36px!important;margin-right:0!important;border-radius:20px}
+  .hero h1{font-size:clamp(3.2rem,18vw,5.7rem)}
+  .song-card iframe,.player-fallback{height:180px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
+</style>
+</head>
+<body>
+<div class="tulip-field" aria-hidden="true">
+  <span class="tulip" style="left:5%;animation-duration:28s;animation-delay:-8s"></span>
+  <span class="tulip" style="left:17%;animation-duration:33s;animation-delay:-19s"></span>
+  <span class="tulip" style="left:31%;animation-duration:30s;animation-delay:-4s"></span>
+  <span class="tulip" style="left:46%;animation-duration:36s;animation-delay:-24s"></span>
+  <span class="tulip" style="left:61%;animation-duration:29s;animation-delay:-14s"></span>
+  <span class="tulip" style="left:74%;animation-duration:34s;animation-delay:-27s"></span>
+  <span class="tulip" style="left:87%;animation-duration:31s;animation-delay:-10s"></span>
+  <span class="tulip" style="left:95%;animation-duration:38s;animation-delay:-22s"></span>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">A little piece of my heart</div>
+    <h1>For Denise</h1>
+    <p>100 reasons, 14 songs, and a thousand little thoughts that somehow all lead back to the same person.</p>
+  </div>
+  <a class="scroll-cue" href="#reasons" aria-label="Scroll to the 100 reasons">
+    <span>Scroll down</span><span class="chevron"></span>
+  </a>
+</header>
+
+<main>
+<section class="section" id="reasons">
+  <div class="section-head reveal">
+    <div class="eyebrow">01 · The letter</div>
+    <h2>100 Reasons Why I Love You</h2>
+  </div>
+  <div class="reasons">
+    <article class="reason-card"><span class="reason-number">001</span><div><p>I love that you still sometimes chat me even if you are busy.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">002</span><div><p>I love that you support me on everything I do.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">003</span><div><p>I love that you smile throughout the whole day, even if something has been bothering you.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">004</span><div><p>I love the way you laugh—it feels contagious, making me laugh too.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">005</span><div><p>I love the way you make everyones day better.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">006</span><div><p>I love your voice.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">007</span><div><p>I love your smile.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">008</span><div><p>I love your eyes.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">009</span><div><p>I love your hair.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">010</span><div><p>I love your patience.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">011</span><div><p>I love your creativity.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">012</span><div><p>I love your curiosity.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">013</span><div><p>I love your expressions.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">014</span><div><p>I love your sense of humor.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">015</span><div><p>I love the placement of your dimple.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">016</span><div><p>I love the way you are a very extraordinary—chalant person.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">017</span><div><p>I love how sweet you are.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">018</span><div><p>I love how caring of a person you truly are.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">019</span><div><p>I love how you keep making my day better.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">020</span><div><p>I love how you believe in me, even when I doubt myself.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">021</span><div><p>I love how you motivate me.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">022</span><div><p>I love how you comfort me.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">023</span><div><p>I love how talented you are on dancing.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">024</span><div><p>I love how you listen on things that happened in that day.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">025</span><div><p>I love how random you are.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">026</span><div><p>I love how you are both my best friend and my soon to be love—. (kahadlok nabas mga kabataan ron, assuming/feeler )</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">027</span><div><p>I love how you accept my flaws.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">028</span><div><p>I love your cute reactions.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">029</span><div><p>I love how you make me feel appreciated.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">030</span><div><p>I love your little habits.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">031</span><div><p>I love how you always find way to make me smile.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">032</span><div><p>I love how you make me feel safe when I’m around you.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">033</span><div><p>I love how proud you are of me.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">034</span><div><p>I love how honest you are with me.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">035</span><div><p>I love how you remember the things that I tell you.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">036</span><div><p>I love our silly jokes.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">037</span><div><p>I love our random conversations and our random interactions.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">038</span><div><p>I love making memories with you.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">039</span><div><p>I love how you make me feel like I’m part of your life.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">040</span><div><p>I love how you make me feel like I matter.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">041</span><div><p>I love your effort, even on small things.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">042</span><div><p>I love how you can make me feel better.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">043</span><div><p>I love you how you are so kind to other people.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">044</span><div><p>I love how your happiness could spread to other people.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">045</span><div><p>I love how you make my gifts feel important to you.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">046</span><div><p>I love how hardworking you are on school.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">047</span><div><p>I love how you care the things that I care about.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">048</span><div><p>I love that you make me feel special.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">049</span><div><p>I love how you make me look forward to tomorrow.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">050</span><div><p>I love how you forgive me when I did something wrong.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">051</span><div><p>I love the way you look when you’re genuinely happy.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">052</span><div><p>I love how you never have to pretend to me.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">053</span><div><p>I love how your personality makes you unforgettable.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">054</span><div><p>I love how you can make me laugh without even trying.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">055</span><div><p>I love how you try to understand instead of immediately judging.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">056</span><div><p>I love how you make me want to share everything about you.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">057</span><div><p>I love the way you type.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">058</span><div><p>I love how you make me feel heard.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">059</span><div><p>I love how you can be both serious and silly.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">060</span><div><p>I love how you make ordinary memories worth keeping.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">061</span><div><p>I love how you care about the people around you.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">062</span><div><p>I love your patience with me.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">063</span><div><p>I love how you don’t give up easily.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">064</span><div><p>I love how you keep trying even when something is difficult.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">065</span><div><p>I love how you lead people.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">066</span><div><p>I love how you tilt your head when talking.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">067</span><div><p>I love how easy it is to smile when talking to you.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">068</span><div><p>I love how you remember things that I forgot I even told you.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">069</span><div><p>I love the way you react when you’re surprised.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">070</span><div><p>I love how you aren’t afraid to be yourself.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">071</span><div><p>I love how there’s always something new to learn about you.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">072</span><div><p>I love the way you make me feel less alone.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">073</span><div><p>I love the way you sometimes chat at the middle of the night.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">074</span><div><p>I love the way you accompany me on things I do.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">075</span><div><p>I love how you listen to things that might seem unimportant.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">076</span><div><p>I love how you never made me feel like I’m bothering you.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">077</span><div><p>I love the way you show you care.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">078</span><div><p>I love seeing you become more confident in yourself.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">079</span><div><p>I love that you keep growing as a person.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">080</span><div><p>I love how genuine you are.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">081</span><div><p>I love how you respect other people’s feelings.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">082</span><div><p>I love how you celebrate the people you care about.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">083</span><div><p>I love how you support the people around you.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">084</span><div><p>I love how you don’t need attention to be special.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">085</span><div><p>I love how thoughtful you are.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">086</span><div><p>I love the way you make people laugh.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">087</span><div><p>I love the random things we talk about.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">088</span><div><p>I love how conversations we had can stay in my mind all day.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">089</span><div><p>I love how I feel “kilig” and “gigil” when talking to you.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">090</span><div><p>I love how familiar you have become to me.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">091</span><div><p>I love how simple message can mean so much to me.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">092</span><div><p>I love how I have you to talk to.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">093</span><div><p>I love how we last for hours talking to each oher.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">094</span><div><p>I love how you make good moments even better.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">095</span><div><p>I love how knowing you has changed some of the ways I see things.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">096</span><div><p>I love the memories we’ve already made.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">097</span><div><p>I love the memories we’re still going to make.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">098</span><div><p>I love how when I think about the people I’m grateful to have met, you’re the first one who comes to mind.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">099</span><div><p>I love you simply because you’re you.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+<article class="reason-card"><span class="reason-number">100</span><div><p>And most of all, I love you, if there were a thousand universes—a thousand lives—and a thousand versions of me, I know I would still find my way to you in every single one. If there are infinite universes and endless versions of our lives, I’d only want to find the one where—I still end up with you.</p></div><button class="heart" type="button" aria-label="Favorite this reason" aria-pressed="false">♥</button></article>
+  </div>
+</section>
+
+<section class="section" id="songs">
+  <div class="section-head reveal">
+    <div class="eyebrow">02 · The mixtape</div>
+    <h2>14 Songs I Dedicate to You</h2>
+  </div>
+  <div class="songs-wrap">
+    <article class="song-card">
+      <div class="song-meta"><span class="track-no">01</span><div><h3>About you</h3><p>The 1975</p></div></div>
+      <iframe loading="lazy" title="About you by The 1975" src="https://open.spotify.com/embed/track/3hEfpBHxgieRLz4t3kLNEg?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <blockquote class="song-lyrics">“You and I (Don't let go)<br>We're alive (Don't let go)<br>With nothing to do, I could lay and just look in your eyes”<br><br>“Hold on and hope that we'll find our way back in the end”</blockquote>
+      <p class="song-note">Looking at you is where I feel most content and alive. Whatever life brings our way, I hope that we ‘find our way back in the end.’</p>
+    </article>
+
+    <article class="song-card">
+      <div class="song-meta"><span class="track-no">02</span><div><h3>Something About You</h3><p>Eyedress</p></div></div>
+      <iframe loading="lazy" title="Something About You by Eyedress" src="https://open.spotify.com/embed/track/6RiiSy9GzSwiyDEJDiMuKe?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <blockquote class="song-lyrics">“She looks just like a dream<br>The prettiest girl I've ever seen<br>From the cover of a magazine”</blockquote>
+      <p class="song-note">There are no words to describe how beautiful and pretty you are.</p>
+    </article>
+
+    <article class="song-card">
+      <div class="song-meta"><span class="track-no">03</span><div><h3>Happiness</h3><p>Rex Orange County</p></div></div>
+      <iframe loading="lazy" title="Happiness by Rex Orange County" src="https://open.spotify.com/embed/track/2rXVtoLBHuXcNB5DVfIc9p?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <blockquote class="song-lyrics">“I'll be the one that stays 'till the end<br>And I'll be the one that needs you again”</blockquote>
+      <p class="song-note">I dream to be the one who ‘stays ‘till the end.’ I can’t fully put into words how much I want to be the one who ends up with you at the end of it.</p>
+    </article>
+
+    <article class="song-card">
+      <div class="song-meta"><span class="track-no">04</span><div><h3>Understand</h3><p>Keshi</p></div></div>
+      <iframe loading="lazy" title="Understand by Keshi" src="https://open.spotify.com/embed/track/72sfmdpuO5r8cBDgs7MqZZ?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <blockquote class="song-lyrics">“Ooh, ooh<br>Maybe we can try it if you let me<br>Take you by the hand<br>You're the only one who understands”<br><br>“I'll admit that I'm scared<br>'Cause I've never really cared as much as this<br>It's worth the risk”</blockquote>
+      <p class="song-note">You are the one person who truly understands and appreciates me. I only ever want to take on the world with you by my side. Falling inlove is a huge risk, but loving you makes every single risk worth taking.</p>
+    </article>
+
+    <article class="song-card">
+      <div class="song-meta"><span class="track-no">05</span><div><h3>A Love Song</h3><p>Zild</p></div></div>
+      <iframe loading="lazy" title="A Love Song by Zild" src="https://open.spotify.com/embed/track/16GoLWJoDYCatCgn2osKFh?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <blockquote class="song-lyrics">“I'll love you 'til the time is right<br>I'll love you even I'm in fright<br>I'll love you 'til the birds won't fly<br>I'll love you 'til the sky won't cry”</blockquote>
+      <p class="song-note">I will love you through every fear, every storm, and for as long as time allows.</p>
+    </article>
+
+    <article class="song-card">
+      <div class="song-meta"><span class="track-no">06</span><div><h3>Sesame Syrup</h3><p>Cigarretes After Sex</p></div></div>
+      <iframe loading="lazy" title="Sesame Syrup by Cigarretes After Sex" src="https://open.spotify.com/embed/track/6GcZ4pdtZgbf2ptgHG31bq?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <blockquote class="song-lyrics">“You've had a long list of lovers,<br>But none of them matter to you except me<br>I've had a long list of lovers,<br>But none of them matter to me except you”</blockquote>
+      <p class="song-note">We may have had pasts before finding each other, but none of it compares to what we have now. You are the only one who truly matters.</p>
+    </article>
+
+    <article class="song-card">
+      <div class="song-meta"><span class="track-no">07</span><div><h3>Captivated</h3><p>IV of Spades</p></div></div>
+      <iframe loading="lazy" title="Captivated by IV of Spades" src="https://open.spotify.com/embed/track/39SQ0CjIineoa2mbiJpZdk?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <blockquote class="song-lyrics">“You're the one that I want to be with<br>Never want to be separated, oh<br>I'm captivated”</blockquote>
+      <p class="song-note">I am completely captivated by everything you are.</p>
+    </article>
+
+    <article class="song-card">
+      <div class="song-meta"><span class="track-no">08</span><div><h3>Pasilyo</h3><p>Sunkissed Lola</p></div></div>
+      <iframe loading="lazy" title="Pasilyo by Sunkissed Lola" src="https://open.spotify.com/embed/track/0uZFcsx96wzbixsULmrg8o?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <blockquote class="song-lyrics">“Ikaw at ikaw<br>Ikaw at ikaw<br>Ikaw at ikaw<br>Ikaw at ikaw”</blockquote>
+      <p class="song-note">In every lifetime and through every version of me, it will always be forever be you.</p>
+    </article>
+
+    <article class="song-card">
+      <div class="song-meta"><span class="track-no">09</span><div><h3>Loving is Easy</h3><p>Rex Orange County</p></div></div>
+      <iframe loading="lazy" title="Loving is Easy by Rex Orange County" src="https://open.spotify.com/embed/track/7ASFZh1D0DPZro7UXUKGmd?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <blockquote class="song-lyrics">“I was all on my own<br>Almost glad to be alone<br>Until love came in on time, on time”<br><br>“Please don't change a single little thing for me”</blockquote>
+      <p class="song-note">Before you, I felt I was comfortable to be alone, being on my own. But then you came into my life unexpectedly, yet at the exact right moment. You are perfect to me just the way you are!</p>
+    </article>
+
+    <article class="song-card">
+      <div class="song-meta"><span class="track-no">10</span><div><h3>Paru-Paro</h3><p>IV of Spades</p></div></div>
+      <iframe loading="lazy" title="Paru-Paro by IV of Spades" src="https://open.spotify.com/embed/track/4vJoaI1445sreRuSYAdaLW?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <blockquote class="song-lyrics">“Paruparo nabubuo<br>Harding nasa sikmura ko<br>Ano'ng gagawin? (Ano'ng gagawin?)<br>Sa'n ba titingin?<br>Kinikilig ang aking kaluluwa<br>Nawawala ang angas ng mukha<br>Pisngi'y kulay-rosas”</blockquote>
+      <p class="song-note">Even the slight eye-contact with you gives me the butterflies.</p>
+    </article>
+
+    <article class="song-card">
+      <div class="song-meta"><span class="track-no">11</span><div><h3>Ulap</h3><p>Rob Deniel</p></div></div>
+      <iframe loading="lazy" title="Ulap by Rob Deniel" src="https://open.spotify.com/embed/track/1OrPpim6Gl4rmRrHlyUjCn?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <blockquote class="song-lyrics">“Isasayaw ka sa ulap<br>At mag-uusap, hindi manghuhula<br>Isasayaw ka sa ulap<br>Hindi hahayaang mahulog nang tuluyan”</blockquote>
+      <p class="song-note">Hearing this song reminds me of the peace you gave me. I’d want to dance this song with you.</p>
+    </article>
+
+    <article class="song-card">
+      <div class="song-meta"><span class="track-no">12</span><div><h3>Sweet</h3><p>Cigarretes After Sex</p></div></div>
+      <iframe loading="lazy" title="Sweet by Cigarretes After Sex" src="https://open.spotify.com/embed/track/2KhrPRV0V1FS2l4eQMJUWt?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <blockquote class="song-lyrics">“It's so sweet, knowing that you love me<br>Though we don't need to say it to each other, sweet”</blockquote>
+      <p class="song-note">It feels comforting knowing that you love me, even when we don’t say a word.</p>
+    </article>
+
+    <article class="song-card">
+      <div class="song-meta"><span class="track-no">13</span><div><h3>Lia</h3><p>Zild</p></div></div>
+      <iframe loading="lazy" title="Lia by Zild" src="https://open.spotify.com/embed/track/0bdFYK7peWdZL7WBvMMElv?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <blockquote class="song-lyrics">“Gagawa ako ng kanta<br>Na ikaw ang pamagat<br>Mga letra'y di pa handa<br>Tono ang nauna<br><br>Ikaw ang hinihintay ko<br>Handang magpakatotoo<br>Binubuksan ang pinto”</blockquote>
+      <p class="song-note">The whole song reminds me of you and how effortless it is to be genuine around you</p>
+    </article>
+
+    <article class="song-card">
+      <div class="song-meta"><span class="track-no">14</span><div><h3>Can’t Take My Eyes Off You</h3><p>Frankie Valli</p></div></div>
+      <iframe loading="lazy" title="Can't Take My Eyes Off You by Frankie Valli" src="https://open.spotify.com/embed/track/0bfvHnWWOeU1U5XeKyVLbW?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <blockquote class="song-lyrics">“At long last, love has arrived<br>And I thank God I'm alive<br>You're just too good to be true<br>Can't take my eyes off of you”<br><br>“Pardon the way that I stare<br>There's nothin' else to compare<br>The sight of you leaves me weak<br>There are no words left to speak”<br><br>“I love you, baby<br>And if it's quite alright<br>I need you, baby<br>To warm the lonely night”</blockquote>
+      <p class="song-note">FINDING YOU HAS BEEN THE GREATEST DECISION I HAVE EVER DONE, I’M LEFT SPEECHLESSLY GRATE THAT YOU ARE MY COMFORT, MY EVERYTHING AND YOU ARE TRULY TOO GOOD TO BE TRUE.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section final">
+  <div class="seal">♥</div>
+  <h2>And somehow, it’s still you.</h2>
+  <p>Through every version of me, every ordinary day, every memory already made, and every memory still waiting to happen.</p>
+</section>
+</main>
+
+<footer>Made with love · For Denise</footer>
+
+<div class="song-choice" id="songChoice" role="dialog" aria-modal="true" aria-labelledby="songChoiceTitle">
+  <div class="song-choice-card">
+    <h2 id="songChoiceTitle">Choose a song ♡</h2>
+    <p>Before you begin, choose the song you'd like to hear while you read. When it finishes, the other song will continue automatically.</p>
+    <div class="song-choice-actions">
+      <button type="button" data-track="about">About You · The 1975</button>
+      <button type="button" data-track="happiness">Happiness · Rex Orange County</button>
+    </div>
+  </div>
+</div>
+<div class="ambient-player" aria-label="Ambient music player">
+  <button class="ambient-toggle" id="ambientToggle" type="button" aria-label="Pause background music" aria-pressed="true">♫</button>
+  <span class="ambient-label" id="ambientLabel">Choose a song</span>
+  <audio id="ambientAudio" preload="auto"></audio>
+</div>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold: .12});
+document.querySelectorAll('.reveal, .reason-card, .song-card').forEach(el => {
+  el.classList.add('reveal');
+  observer.observe(el);
+});
+
+
+/* Favorite reasons — saved locally on this device. */
+const FAVORITES_KEY = 'denise-love-letter-favorites-v1';
+const savedFavorites = new Set(JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]'));
+document.querySelectorAll('.reason-card').forEach(card => {
+  const number = card.querySelector('.reason-number')?.textContent.trim();
+  const heart = card.querySelector('.heart');
+  if (!heart || !number) return;
+  const setFavorite = (on, animate = false) => {
+    heart.classList.toggle('favorited', on);
+    heart.setAttribute('aria-pressed', String(on));
+    heart.setAttribute('aria-label', on ? 'Remove from favorites' : 'Favorite this reason');
+    if (animate) {
+      heart.classList.remove('pop');
+      void heart.offsetWidth;
+      heart.classList.add('pop');
+    }
+    if (on) savedFavorites.add(number); else savedFavorites.delete(number);
+    localStorage.setItem(FAVORITES_KEY, JSON.stringify([...savedFavorites]));
+  };
+  setFavorite(savedFavorites.has(number));
+  heart.addEventListener('click', () => setFavorite(!heart.classList.contains('favorited'), true));
+});
+
+/* Ambient player. Direct audio URLs are intentionally not embedded from Spotify;
+   replace the two paths below with licensed/local audio files if desired. */
+const tracks = {
+  about: { name: 'About You · The 1975', src: 'about-you.mp3', next: 'happiness' },
+  happiness: { name: 'Happiness · Rex Orange County', src: 'happiness.mp3', next: 'about' }
+};
+const audio = document.getElementById('ambientAudio');
+const toggle = document.getElementById('ambientToggle');
+const label = document.getElementById('ambientLabel');
+const choice = document.getElementById('songChoice');
+let currentTrack = null;
+
+function loadTrack(key, autoplay = true) {
+  const track = tracks[key];
+  currentTrack = key;
+  audio.src = track.src;
+  audio.load();
+  label.textContent = track.name;
+  if (autoplay) audio.play().catch(() => {
+    label.textContent = track.name + ' · tap ♫ to play';
+  });
+  toggle.setAttribute('aria-label', 'Pause background music');
+  toggle.setAttribute('aria-pressed', 'true');
+  toggle.textContent = '♫';
+}
+
+document.querySelectorAll('[data-track]').forEach(button => {
+  button.addEventListener('click', () => {
+    loadTrack(button.dataset.track);
+    choice.hidden = true;
+    localStorage.setItem('denise-ambient-track', button.dataset.track);
+  });
+});
+
+audio.addEventListener('ended', () => {
+  if (currentTrack) loadTrack(tracks[currentTrack].next);
+});
+
+toggle.addEventListener('click', () => {
+  if (!audio.src) {
+    choice.hidden = false;
+    return;
+  }
+  if (audio.paused) {
+    audio.play().catch(() => {});
+    toggle.textContent = '♫';
+    toggle.setAttribute('aria-label', 'Pause background music');
+    toggle.setAttribute('aria-pressed', 'true');
+  } else {
+    audio.pause();
+    toggle.textContent = '▶';
+    toggle.setAttribute('aria-label', 'Play background music');
+    toggle.setAttribute('aria-pressed', 'false');
+  }
+});
+
+/* Restore the last selected song; first visit still asks for a choice. */
+const previousTrack = localStorage.getItem('denise-ambient-track');
+if (previousTrack && tracks[previousTrack]) {
+  choice.hidden = true;
+  loadTrack(previousTrack, false);
+  label.textContent = tracks[previousTrack].name + ' · paused';
+  toggle.textContent = '▶';
+  toggle.setAttribute('aria-label', 'Play background music');
+  toggle.setAttribute('aria-pressed', 'false');
+}
+
+</script>
+</body>
+</html>
